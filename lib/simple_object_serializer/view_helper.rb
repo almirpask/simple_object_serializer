@@ -1,6 +1,6 @@
 module SimpleObjectSerializer
-  module ViewHelper
-    def serialize_objects(parameters, objects)
+  class ViewHelper
+    def serialize_objects(objects, parameters)
       new_object = {}
       parameters.each do |parameter_index, parameter|
         parameter.each do |key|
@@ -8,7 +8,6 @@ module SimpleObjectSerializer
           new_object[parameter_index][key] = objects[parameter_index][key]
         end
       end
-      new_object
     end
   end
 end
