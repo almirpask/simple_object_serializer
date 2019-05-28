@@ -12,7 +12,4 @@ Gem::Specification.new do |s|
     "lib/simple_object_serializer.rb"
   ]
   s.require_paths = ["lib"]
-
-  spec.add_development_dependency "bundler", "~> 1.16"
-  spec.add_dependency "rails", "~> 5.0"
 end
