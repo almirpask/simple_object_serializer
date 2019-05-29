@@ -21,7 +21,7 @@ my_car = {
   model: 'Mustang'
   fabrication_yar: '2010'
 }
-serialize_objects({user: @user, product: @product. my_car: my_car}, {user: ['name'], product: ['name', 'price'], my_car: ['brand', 'model']})
+serialize_objects({user: @user, product: @product, my_car: my_car}, {user: ['name'], product: ['name', 'price'], my_car: ['brand', 'model']})
 
 # =>
 {
