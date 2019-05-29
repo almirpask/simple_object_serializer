@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
     "lib/simple_object_serializer.rb"
   ]
   s.require_paths = ["lib"]
+
+  s.add_development_dependency "rspec", "~> 3.0"
 end
