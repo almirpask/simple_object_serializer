@@ -41,8 +41,9 @@ serialize_objects({user: @user, product: @product. my_car: my_car}, {user: ['nam
 
 ## TODO
 1. Proper gem operation with arrays
-2. Extend the functionalities to controllers
-3. Allow to pass parameters without having to specify the properties (if exist a parameter without the property specification just show this entire object on results)
+2. Make this gem run with Active Record relationships
+3. Extend the functionalities to controllers
+4. Allow to pass parameters without having to specify the properties (if exist a parameter without the property specification just show this entire object on results)
 
 ## Contributing
 
