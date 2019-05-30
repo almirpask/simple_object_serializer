@@ -14,6 +14,7 @@ RSpec.describe SimpleObjectSerializer::ViewHelper do
     price: Faker::Commerce.price,
     material: Faker::Commerce.material
   }}
+  let(:animals) { ['dog', 'cat', 'dolphin'] }
 
   it 'remove some attributes' do
     serialized = view_helper.serialize_objects({user: user, product: product}, {user: [:name], product: [:name, :material]})
@@ -23,5 +24,9 @@ RSpec.describe SimpleObjectSerializer::ViewHelper do
   it 'allow to pass a full object with empty params' do
     serialized = view_helper.serialize_objects({user: user, product: product}, {user: [:name], product: []})
     expect(serialized[:product][:name]).to eq(product[:name])
+  end
+  it 'allow to pass a full array with empty params' do
+    serialized = view_helper.serialize_objects({user: user, product: product, animals: animals}, {user: [:name], product: [], animals: []})
+    expect(serialized[:animals].first).to eq('dog')
   end
 end

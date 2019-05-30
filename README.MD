@@ -39,7 +39,7 @@ serialize_objects({user: @user, product: @product, my_car: my_car}, {user: [:nam
 }
 ```
 
-### passing full objects
+### Passing full objects
 To pass full objecets you need to pass a object parameter empty like this:
 
 ```ruby
@@ -68,6 +68,28 @@ serialize_objects({user: @user, product: @product, my_car: my_car}, {user: [:nam
   }
 }
 ```
+
+### Passing a simple array
+
+```ruby
+@user = User.find(1)
+@product = Product.first
+animals = ['dog', 'cat', 'dolphin']
+serialize_objects({user: user, product: product}, {user: [:name], product: [:name, :material]})})
+
+# =>
+{
+  user: {
+    name: 'Nick Fury'
+  },
+  product: {
+    name: 'Chair',
+    price: '40.00'
+  },
+  animals: ['dog', 'cat', 'dolphin']
+}
+```
+
 
 ## TODO
 1. Proper gem operation with arrays
