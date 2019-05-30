@@ -21,7 +21,7 @@ my_car = {
   model: 'Mustang'
   fabrication_yar: '2010'
 }
-serialize_objects({user: @user, product: @product, my_car: my_car}, {user: ['name'], product: ['name', 'price'], my_car: ['brand', 'model']})
+serialize_objects({user: @user, product: @product, my_car: my_car}, {user: [:name], product: [:name, :price], my_car: [:brand, :model]})
 
 # =>
 {
@@ -35,6 +35,36 @@ serialize_objects({user: @user, product: @product, my_car: my_car}, {user: ['nam
   my_car: {
     brand: 'Ford',
     model: 'Mustang'
+  }
+}
+```
+
+### passing full objects
+To pass full objecets you need to pass a object parameter empty like this:
+
+```ruby
+@user = User.find(1)
+@product = Product.first
+my_car = {
+  brand: 'Ford',
+  model: 'Mustang'
+  fabrication_yar: '2010'
+}
+serialize_objects({user: @user, product: @product, my_car: my_car}, {user: [:name], product: [:name, :price], my_car: []})
+
+# =>
+{
+  user: {
+    name: 'Nick Fury'
+  },
+  product: {
+    name: 'Chair',
+    price: '40.00'
+  },
+  my_car: {
+    brand: 'Ford',
+    model: 'Mustang'
+    fabrication_yar: '2010'
   }
 }
 ```

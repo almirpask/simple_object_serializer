@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
 
   s.homepage = "https://github.com/almirpask/simple_object_serializer"
   s.license = "MIT"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.date = %q{2019-05-26}
   s.summary = %q{this gem transforms a sequence of objects into one by selecting only the desired properties of them}
   s.files = [
