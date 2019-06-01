@@ -14,7 +14,7 @@ Then run the `bunlde` command
 ## Usage
 For now this gem only provides to you a view helper which you can use to merge your objects eg:
 ```ruby
-@user = User.find(1)
+@user = User.find(2)
 @product = Product.first
 my_car = {
   brand: 'Ford',
@@ -43,7 +43,7 @@ serialize_objects({user: @user, product: @product, my_car: my_car}, {user: [:nam
 To pass full objecets you need to pass a object parameter empty like this:
 
 ```ruby
-@user = User.find(1)
+@user = User.find(2)
 @product = Product.first
 my_car = {
   brand: 'Ford',
@@ -72,10 +72,10 @@ serialize_objects({user: @user, product: @product, my_car: my_car}, {user: [:nam
 ### Passing a simple array
 
 ```ruby
-@user = User.find(1)
+@user = User.find(2)
 @product = Product.first
 animals = ['dog', 'cat', 'dolphin']
-serialize_objects({user: user, product: product}, {user: [:name], product: [:name, :material]})})
+serialize_objects({user: @user, product: @product, animals: animals}, {user: [:name], product: [:name, :material], animals: []})
 
 # =>
 {
@@ -90,12 +90,59 @@ serialize_objects({user: user, product: product}, {user: [:name], product: [:nam
 }
 ```
 
+### Passing a array of objects
+
+```ruby
+users = User.all
+
+serialize_objects({users: users}, {users: [:name]})
+
+# =>
+{
+  users: [
+    {
+      name: 'Tonny Stark'
+    },
+    {
+      name: 'Nick Fury'
+    },
+    {
+      name: 'Steve Rogers'
+    }
+  ],
+}
+
+serialize_objects({users: users}, {users: []})
+
+
+# =>
+{
+  users: [
+
+    {
+      id: 1
+      name: 'Tonny Stark',
+      email: 'tonny.stark@avengers.com'
+    },
+    {
+      id: 2
+      name: 'Nick Fury',
+      email: 'nick.fury@avengers.com'
+    },
+    {
+      id: 3
+      name: 'Steve Rogers',
+      email: 'steve.rogers@avengers.com'
+    }
+  ],
+}
+```
+
 
 ## TODO
-1. Proper gem operation with arrays
-2. Make this gem run with Active Record relationships
-3. Extend the functionalities to controllers
-4. Allow to pass parameters without having to specify the properties (if exist a parameter without the property specification just show this entire object on results)
+1. Make this gem run with Active Record relationships
+2. Extend the functionalities to controllers
+3. Allow to pass parameters without having to specify the properties (if exist a parameter without the property specification just show this entire object on results)
 
 ## Contributing
 
