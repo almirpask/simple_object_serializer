@@ -7,7 +7,7 @@ This gem transforms a sequence of objects into one by selecting only the desired
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'simple_object_serializer', '~> 0.0.1'
+gem 'simple_object_serializer', '~> 0.1.0'
 ```
 Then run the `bunlde` command
 
