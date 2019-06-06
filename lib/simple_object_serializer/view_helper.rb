@@ -1,5 +1,5 @@
 module SimpleObjectSerializer
-  class ViewHelper
+  module ViewHelper
     def serialize_objects(objects, parameters)
       new_object = {}
       parameters.each do |parameter_index, parameter|
