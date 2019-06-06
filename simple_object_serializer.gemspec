@@ -8,8 +8,9 @@ Gem::Specification.new do |s|
   s.version = "0.1.2"
   s.date = %q{2019-05-26}
   s.summary = %q{this gem transforms a sequence of objects into one by selecting only the desired properties of them}
-  s.files = [
-    "lib/simple_object_serializer.rb"
+  spec.files = Dir[
+    'lib/**/*',
+    'README.md'
   ]
   s.require_paths = ["lib"]
 
