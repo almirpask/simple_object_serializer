@@ -4,7 +4,6 @@ This gem transforms a sequence of objects into one by selecting only the desired
 
 ## Instalation
 
- <img src="https://user-images.githubusercontent.com/18711527/62984046-038b7e00-be08-11e9-9fb6-ec55b2ef6195.gif"/>
 Add this line to your application's Gemfile:
 
 ```ruby
